@@ -1,24 +1,27 @@
-Iquidus Explorer - 1.6.1
+BitcoinZ Explorer 1.0.2 (Based on Iquidus Explorer - 1.6.1)
 ================
 
 An open source block explorer written in node.js.
 
 ### See it in action
 
-*  [Jumbucks](http://explorer.getjumbucks.com)
-*  [Sphere](http://sphere.iquidus.io)
-*  [SAR](http://explorer.sarcoin.info)
-*  [Vanillacoin](https://blockchain.vanillacoin.net/)
-*  [Neoscoin](http://explorer.infernopool.com/)  
-*  [C2Chain](http://c2chain.info/)
+*  [BitcoinZ](https://btczexplorer.blockhub.info)
 
 *note: If you would like your instance mentioned here contact me*
+
+### New Features in BitcoinZ Explorer
+
+*   Added Mining Pool Menu
+*   Added Numeric formats in stats header
+*   Added Market Cap in main layout
+*   Added Mask IPs function for 'Network' layout (A.B.XXX.XXX)
+*   Added graphical node Network map on 'Network' tab
 
 ### Requires
 
 *  node.js >= 0.10.28
 *  mongodb 2.6.x
-*  *coind
+*  *zcashd (bitcoinzd)
 
 ### Create database
 
@@ -40,7 +43,7 @@ Create user with read/write access:
 
 ### Get the source
 
-    git clone https://github.com/iquidus/explorer explorer
+    git clone https://github.com/cryptorex/bitcoinz-explorer
 
 ### Install node modules
 
@@ -97,7 +100,8 @@ sync.js (located in scripts/) is used for updating the local databases. This scr
     */1 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/null 2>&1
     */2 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2>&1
     */5 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
-
+    */5 * * * * cd /path/to/explorer && /usr/bin/nodejs scripts/mapgetdata.js > /dev/null 2>&1
+    
 ### Wallet
 
 Iquidus Explorer is intended to be generic so it can be used with any wallet following the usual standards. The wallet must be running with atleast the following flags
@@ -106,8 +110,8 @@ Iquidus Explorer is intended to be generic so it can be used with any wallet fol
 
 ### Donate
 
-    BTC: 168hdKA3fkccPtkxnX8hBrsxNubvk4udJi
-    JBS: JZp9893FMmrm1681bDuJBU7c6w11kyEY7D
+    BTC: 1MTdvZFPKPixYt8FFqMWHHATGcLtrWcQXp
+
 
 ### Known Issues
 
@@ -165,3 +169,4 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
