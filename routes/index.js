@@ -122,8 +122,37 @@ function route_get_address(res, hash, count) {
 }
 
 /* GET home page. */
+var HTTPS_PORT = 3006;
+
+/* redirects OLD urls + ip to SSL */
+
 router.get('/', function(req, res) {
-  route_get_index(res, null);
+ var rprotocol = req.protocol;
+ var rhostname = req.get('host');
+ if (rhostname == 'btzexplorer.blockhub.info' && rprotocol == 'https') {
+   return res.redirect('https://' + 'btczexplorer.blockhub.info' + req.originalUrl);
+ } else if (rhostname == 'btzexplorer.blockhub.info' && rprotocol == 'http') {
+   return res.redirect('https://' + 'btczexplorer.blockhub.info' + req.originalUrl);
+ } else if (rhostname == 'btczexplorer.blockhub.info' && rprotocol == 'http') {
+   return res.redirect('https://' + 'btczexplorer.blockhub.info' + req.originalUrl);
+ } else if (rhostname == '34.211.79.94' && rprotocol == 'http') {
+   return res.redirect('https://' + 'btczexplorer.blockhub.info' + req.originalUrl);
+ } else if (rhostname == '34.211.79.94' && rprotocol == 'https') {
+   return res.redirect('https://' + 'btczexplorer.blockhub.info' + req.originalUrl);
+ } else if (rhostname == 'explorer.bitcoinz.site' && rprotocol == 'http') {
+   return res.redirect('https://' + 'explorer.bitcoinz.site' + req.originalUrl);
+ } else if (rhostname == 'explorer.bitcoinz.global' && rprotocol == 'http') {
+   return res.redirect('https://' + 'explorer.bitcoinz.global' + req.originalUrl);
+ } else if (rhostname == 'blockhub.info' && rprotocol == 'http') {
+   return res.redirect('https://' + 'btczexplorer.blockhub.info' + req.originalUrl);
+ } else if (rhostname == 'blockhub.info' && rprotocol == 'https') {
+   return res.redirect('https://' + 'btczexplorer.blockhub.info' + req.originalUrl);
+// } else if (rhostname == 'explorer.bitcoinz.site' && rprotocol == 'https') {
+//   return res.redirect('https://' + 'btczexplorer.blockhub.info' + req.originalUrl);
+ } else {
+   console.log(rprotocol + ':' + rhostname);
+   return route_get_index(res, null);
+ }
 });
 
 router.get('/info', function(req, res) {

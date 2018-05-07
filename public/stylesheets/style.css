@@ -164,3 +164,29 @@ tr {
 	bottom: 0px;
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+a.pricelink {
+        text-decoration: underline;
+        color: inherit;
+        font-size: inherit;
+}
+
+a.pricelink a:hover {
+        text-decoration: none;
+        cursor: pointer;
+
+}
+
+.marketcap {
+        color: inherit;
+        font-size: 18px;
+        font-weight: bold;
+}
+
+.donate {
+	font-size: 10px;
+	font-weight: normal;
+}

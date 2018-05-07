@@ -1,3 +1,18 @@
+BitcoinZ Explorer - 1.0.2
+
+* Network node graphical geomap on 'Network' tab
+
+
+BitcoinZ Explorer - 1.0.1
+
+* Added Mining Pool Menu
+* Added Numeric formats in stats header
+* Added Market Cap in main layout
+* Added Mask IPs function for 'Network' layout (A.B.XXX.XXX)
+
+-------------------------------------------------------------
+
+
 1.6.1
 * fixed last_txs setting
 * added hashrate_units setting

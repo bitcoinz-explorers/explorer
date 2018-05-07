@@ -56,7 +56,30 @@ db.connect(dbString, function() {
     }); 
   }
 
-  var server = app.listen(app.get('port'), function() {
-    debug('Express server listening on port ' + server.address().port);
-  });
+var fs = require('fs'),
+http = require('http'),
+https = require('https');
+var HTTP_PORT = 80
+var HTTPS_PORT = 443
+
+app.get('*', function(req, res, next){
+  if (req.secure) {
+  return next();
+  };
+  // res.redirect('https://'+req.hostname+':'+HTTPS_PORT+req.originalUrl);
+  res.redirect('https://'+ req.hostname + req.originalUrl);
+});
+
+//HTTPS
+
+var secureServer = https.createServer({
+	key: fs.readFileSync('/etc/letsencrypt/live/btczexplorer.blockhub.info/privkey.pem'),
+	cert: fs.readFileSync('/etc/letsencrypt/live/btczexplorer.blockhub.info/cert.pem')
+  }, app).listen(HTTPS_PORT);
+
+var insecureServer = http.createServer(app).listen(HTTP_PORT);
+
+//  var server = app.listen(app.get('port'), function() {
+//    debug('Express server listening on port ' + server.address().port);
+//  });
 });
