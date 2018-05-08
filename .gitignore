@@ -27,6 +27,4 @@ node_modules
 settings.json
 .idea
 *~
-*.ico
-*.png
-
+public/javascripts/mapdata.js

@@ -5,37 +5,37 @@
 */
 {
   // name your instance!
-  "title": "IQUIDUS",
+  "title": "BitcoinZ Explorer",
 
-  "address": "127.0.0.1:3001",
+  "address": "btczexplorer.blockhub.info",
 
   // coin name
-  "coin": "Darkcoin",
+  "coin": "BitcoinZ",
 
   // coin symbol
-  "symbol": "DRK",
+  "symbol": "BTCZ",
 
   // logo
-  "logo": "/images/logo.png",
+  "logo": "/images/btz_temp_logo.png",
 
   // favicon
-  "favicon": "public/favicon.ico",
+  "favicon": "public/favicon_temp.ico",
 
   // Uses bootswatch themes (http://bootswatch.com/)
   // Valid options:
   //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Lumen, Paper,
   //     Readable, Sandstone, Simplex, Slate, Spacelab, Superhero, United, Yeti
   // theme (see /public/themes for available themes)
-  "theme": "Cyborg",
+  "theme": "Slate",
 
   // port to listen for requests on.
-  "port" : 3001,
+  "port" : 80,
 
   // database settings (MongoDB)
   "dbsettings": {
-    "user": "iquidus",
-    "password": "3xp!0reR",
-    "database": "explorerdb",
+    "user": "username",
+    "password": "password",
+    "database": "database",
     "address": "localhost",
     "port": 27017
   },
@@ -47,9 +47,9 @@
   // wallet settings
   "wallet": {
     "host": "localhost",
-    "port": 9332,
-    "user": "darkcoinrpc",
-    "pass": "123gfjk3R3pCCVjHtbRde2s5kzdf233sa"
+    "port": 1979,
+    "user": "rpcuser",
+    "pass": "rpcpassword"
   },
 
   // confirmations
@@ -61,42 +61,89 @@
   // menu settings
   "display": {
     "api": true,
-    "markets": true,
+    "markets": false,
     "richlist": true,
     "twitter": true,
-    "facebook": false,
+    "facebook": true,
     "googleplus": false,
+    "bitcointalk": true,
+    "slack": true,
+    "discord": true,
+    "github": true,
+    "website": true,
     "search": true,
     "movement": true,
-    "network": true
+    "network": true,
+    "pools": true,
+    "difflink": true
   },
+
+  "poolslist": {
+        "pool1": {"name": "GetPool", "poolurl": "https://bitcoinz.getpool.network/"},
+        "pool2": {"name": "Equi Pool", "poolurl": "https://equipool.1ds.us"},
+        "pool3": {"name": "Abakus-Pool", "poolurl": "http://www.abakus.gemini.net.pl/"},
+        "pool4": {"name": "Poolmate", "poolurl": "http://45.77.41.80:8080/"},
+        "pool5": {"name": "Pcmining", "poolurl": "http://www.pcmining.xyz/"},
+        "pool6": {"name": "Madmax Pool", "poolurl": "http://madmaxpool.hopto.org/getting_started"},
+        "pool7": {"name": "Ragnar Pool", "poolurl": "http://pool.bitcoinzguiding.ovh/"},
+        "pool8": {"name": "Lambomoon", "poolurl": "https://lambomoon.club/"},
+        "pool9": {"name": "LuckPool", "poolurl": "https://luckpool.org/"},
+        "pool10": {"name": "Minepool", "poolurl": "http://btcz.minepool.ch/getting_started"},
+        "pool11": {"name": "Windfall Mining", "poolurl": "https://zpool.wfmpools.com/"},
+        "pool12": {"name": "Miningspeed", "poolurl": "http://pool.miningspeed.com"},
+        "pool13": {"name": "Axepool", "poolurl": "https://axepool.com/getting_started"},
+        "pool14": {"name": "Worldminer", "poolurl": "https://worldminer.net/en/getting_started"},
+        "pool15": {"name": "Pool w00t", "poolurl": "https://pool.w00t.xyz/workers"},
+        "pool16": {"name": "Mining4", "poolurl": "http://equi.mining4.co.uk"},
+        "pool17": {"name": "Pool.Sexy", "poolurl": "http://btz.pool.sexy"},
+        "pool18": {"name": "Miningpool.io", "poolurl": "http://miningpool.io"},
+        "pool19": {"name": "Zpool BTCZ", "poolurl": "http://www.zpool.ca/site/gomining?algo=equihash"},
+        "pool20": {"name": "Suprnova.CC", "poolurl": "https://btcz.suprnova.cc/"},
+        "pool21": {"name": "AikaPool", "poolurl": "https://aikapool.com/btcz/"},
+        "pool22": {"name": "MineZ.zone", "poolurl": "https://minez.zone/"},
+        "pool23": {"name": "Poolmate", "poolurl": "http://45.77.41.80:8080/"},
+        "pool24": {"name": "Zsolo.bid", "poolurl":  "https://zsolo.bid/"},
+        "pool25": {"name": "Equihashing", "poolurl": "https://equihashing.com"},
+        "pool26": {"name": "btcZPool.com", "poolurl": "https://btczpool.com/"},
+        "pool27": {"name": "MINEflow", "poolurl": "http://www.mineflowpool.pl/"},
+        "pool28": {"name": "MultiPool", "poolurl": "https://multipool.es/"},
+        "pool29": {"name": "MinerTopia", "poolurl": "http://btcz.minertopia.org/"},
+        "pool30": {"name": "OwlMining Club", "poolurl": "http://owlminingclub.com/"},
+        "pool31": {"name": "EQ Pool", "poolurl": "http://eqpool.com"},
+        "pool32": {"name": "Z-traffic", "poolurl": "http://z-traffic-pool.eu/"}
+
+//	"pool##": {"name": "pool_name", "poolurl": "pool_url"} Copy and paste to above for adding pool
+
+  },
+
+
 
   // index page (valid options for difficulty are POW, POS or Hybrid)
   "index": {
     "show_hashrate": true,
     "difficulty": "POW",
-    "last_txs": 100
+    "last_txs": 150
   },
 
   // ensure links on API page are valid
   "api": {
-    "blockindex": 1337,
-    "blockhash": "1733320247b15ca2262be646397d1ffd6be953fa638ebb8f5dcbb4c2b91b34f1",
-    "txhash": "f270cd3813254c9922a2e222a56ba745842d9112223a1394062e460b33d27b7e",
-    "address": "RBiXWscC63Jdn1GfDtRj8hgv4Q6Zppvpwb"
+    "blockindex": 5909,
+    "blockhash": "0000004de1eea112ece2288b2a6883aa3ef25a5c0745494968a02c34940d45cb",
+    "txhash": "68153258a2223eda30713cbd6f4a651c137b1e6f8ca9333c1562c54405b09fb5",
+    "address": "t1VYxifh5SXwrVx4tp6fGQioLcBuuKfXXNq"
   },
 
   // market settings
   //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, cryptopia, ccex
   //default market is loaded by default and determines last price in header
   "markets": {
-    "coin": "JBS",
-    "exchange": "BTC",
-    "enabled": ["bittrex"],
-    "cryptopia_id": "1658",
-    "ccex_key" : "Get-Your-Own-Key",
-    "default": "bittrex"
-  },
+   "coin": "JBS",
+   "exchange": "BTC",
+   "enabled": ["bittrex"],
+   "cryptopia_id": "1658",
+   "ccex_key" : "Get-Your-Own-Key",
+   "default": "bittrex"
+},
 
   // richlist/top100 settings
   "richlist": {
@@ -115,9 +162,15 @@
   },
 
   // twitter, facebook, googleplus
-  "twitter": "iquidus",
-  "facebook": "yourfacebookpage",
+  "twitter": "BitcoinZTeam",
+  "facebook": "BTCZCommunity",
   "googleplus": "yourgooglepluspage",
+  "bitcointalk": "https://bitcointalk.org/index.php?topic=3086664.0",
+  "github": "https://github.com/bitcoinz-pod/bitcoinz",
+  "website": "https://btcz.rocks",
+  "slack": "http://slack.btcz.rocks",
+  "discord": "https://discord.gg/u3dkbFs",
+  "difflink": "https://www.crypto-coinz.net/crypto-currency-statistics/",
 
   //genesis
   "genesis_tx": "65f705d2f385dc85763a317b3ec000063003d6b039546af5d8195a5ec27ae410",
@@ -147,7 +200,7 @@
 
   // nethash unitd: sets nethash API return units
   // valid options: "P" (PH/s), "T" (TH/s), "G" (GH/s), "M" (MH/s), "K" (KH/s)
-  "nethash_units": "G",
+  "nethash_units": "K",
 
   // Address labels
   // example : "JhbrvAmM7kNpwA6wD5KoAsbtikLWWMNPcM": {"label": "This is a burn address", "type":"danger", "url":"http://example.com"}
