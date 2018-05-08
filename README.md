@@ -144,6 +144,7 @@ Where [SIZE] is an integer higher than the default.
 Copyright (c) 2015, Iquidus Technology  
 Copyright (c) 2015, Luke Williams  
 Copyright (c) 2017-2018, BitcoinZ Community
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
