@@ -43,7 +43,7 @@ Create user with read/write access:
 
 ### Get the source
 
-    git clone https://github.com/cryptorex/bitcoinz-explorer
+    git clone https://github.com/bitcoinz-explorers/iquidus.git
 
 ### Install node modules
 
