@@ -73,8 +73,8 @@ app.get('*', function(req, res, next){
 //HTTPS
 
 var secureServer = https.createServer({
-	key: fs.readFileSync('/etc/letsencrypt/live/btczexplorer.blockhub.info/privkey.pem'),
-	cert: fs.readFileSync('/etc/letsencrypt/live/btczexplorer.blockhub.info/cert.pem')
+	key: fs.readFileSync('/etc/letsencrypt/live/blockhub.info/privkey.pem'),
+	cert: fs.readFileSync('/etc/letsencrypt/live/blockhub.info/cert.pem')
   }, app).listen(HTTPS_PORT);
 
 var insecureServer = http.createServer(app).listen(HTTP_PORT);
