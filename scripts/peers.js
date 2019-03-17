@@ -47,7 +47,7 @@ mongoose.connect(dbString, function(err) {
                 protocol: body[i].version,
                 version: body[i].subver.replace('/', '').replace('/', ''),
                 country: geo.country,
-                countrycode: geo.countryCode.toLowerCase()
+                countrycode: geo.countryCode
               }, function(){
                 loop.next();
               });
