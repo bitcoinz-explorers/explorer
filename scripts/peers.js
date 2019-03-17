@@ -14,6 +14,16 @@ function maskips (splitaddy) {
   return masked;
 }
 
+function trim(s, mask) {
+while (~mask.indexOf(s[0])) {
+ s = s.slice(1);
+}
+while (~mask.indexOf(s[s.length - 1])) {
+s = s.slice(0, -1);
+}
+return s;
+}
+
 function exit() {
   mongoose.disconnect();
   process.exit(0);
@@ -34,7 +44,7 @@ mongoose.connect(dbString, function(err) {
     request({uri: 'http://127.0.0.1:' + settings.port + '/api/getpeerinfo', json: true}, function (error, response, body) {
       lib.syncLoop(body.length, function (loop) {
         var i = loop.iteration();
-        var address = body[i].addr.split(':')[0];
+        var address = trim(body[i].addr.substring(0, body[i].addr.lastIndexOf(":")), "[]");
 	var maskedaddy = maskips(address);
         db.find_peer(maskedaddy, function(peer) {
           if (peer) {
