@@ -16,10 +16,10 @@
   "symbol": "BTCZ",
 
   // logo
-  "logo": "/images/btz_temp_logo.png",
+  "logo": "/images/logo_dark.png",
 
   // favicon
-  "favicon": "public/favicon_temp.ico",
+  "favicon": "public/favicon.ico",
 
   // Uses bootswatch themes (http://bootswatch.com/)
   // Valid options:
